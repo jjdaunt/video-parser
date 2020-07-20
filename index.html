@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="rvParser">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="rvparser.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+	<script type="text/javascript" src="rvparser.js"></script>
+	<title>Reddit Video Parser</title>
+</head>
+
+<body ng-controller="parseCtrl">
+	<div class="title">Reddit Video Parser</div>
+	<div class="entry">
+		<span>Enter reddit video URL: </span>
+		<input ng-model="url">
+		<button ng-click="getVideo()">Get Video</button>
+	</div>
+	<br style="clear: both">
+	<div class="video" ng-if="status === 0">
+		<a ng-href="{{videoUrl}}">Obtain Video</a>
+	</div>
+	<div class="error" ng-if="status === 1">
+		OOF<pre>{{error}}</pre>
+	</div>
+</body>
+
+</html>
